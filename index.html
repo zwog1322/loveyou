@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>My Web Page</title>
-  <button onclick="location=location">New task</button>
-<script>
-</script>
 </head>
+  <body>
+    <p id = "demo"></p>
+     <button onclick="location=location">New task</button>
+    <script>
+  var cards = [
+    "make peter hard",
+    "this is a test"
+    ];
+  function showcard() {
+    var card = cards[Math.floor(Math.random()*cards.length)];
+    document.getElementById("demo").innerHTML = card;
+</script>
+  </body>
 </html>
