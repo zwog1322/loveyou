@@ -5,18 +5,30 @@
 <title>My Web Page</title>
 </head>
   <body>
-    <p id = "demo"></p>
+    <h1>I love you more than...</h1>
+    <h3>The task is:</h3>
+   <p id="demo"></p>
+     
      <button onclick="location=location">New task</button>
+     <button onclick="showall()">
+     Display all tasks
+     </button>
+    <p id="all">
+     </p>
     <script>
   var cards = [
     "make peter hard",
     "this is a test"
     ];
-  function showcard() {
     var card = cards[Math.floor(Math.random()*cards.length)];
+    var cardsmod = cards.join("<br><br>");
+  function showcard() {
     document.getElementById("demo").innerHTML = card;
   }
-      showcard()
+  showcard()
+  function showall() {
+  document.getElementById("all").innerHTML = cardsmod;
+  }
 </script>
   </body>
 </html>
