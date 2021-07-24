@@ -22,7 +22,6 @@
      Display all tasks
      </button>
     <p id="all">
-      -
      </p>
     
     
@@ -60,7 +59,8 @@
     ];
    
     var cardsmod = cards.join("<br><br>");
-    var cardnumber = 0
+    var cardnumber = 0;
+    var showing = new boolean();
     
   function showcard() {
   if (cards.length < 1) {
@@ -85,10 +85,12 @@
   }
       
   function showall() {
-    if (document.getElementById("all").innerHTML = "-") {
+    if (showing = false) {
   document.getElementById("all").innerHTML = cardsmod;
+      showing = true;
     } else {
       document.getElementById("all").innerHTML = "-";
+      showing = false;
     }
   }
     </script>
