@@ -22,6 +22,7 @@
      Display all tasks
      </button>
     <p id="all">
+      -
      </p>
     
     
@@ -82,14 +83,12 @@
     cards.push("Play a round of poker, using your points to bet");
     }
   }
-  
-  document.getElementById("all").innerHTML = "";
       
   function showall() {
-    if (document.getElementById("all").innerHTML = "") {
+    if (document.getElementById("all").innerHTML = "-") {
   document.getElementById("all").innerHTML = cardsmod;
     } else {
-      document.getElementById("all").innerHTML = "";
+      document.getElementById("all").innerHTML = "-";
     }
   }
     </script>
