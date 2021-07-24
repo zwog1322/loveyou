@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>My Web Page</title>
+<title>Happy Birthday!</title>
 </head>
   <body>
   <h1>
@@ -12,15 +12,44 @@
   The task is:
   </h3>
     <p id="demo"></p>
-     <h3>
+     <h3 id="secondheader">
      Number of tasks done:
      </h3>
      <p id="tasksdone">
+     0
      </p>
+     <h4 id="zacks">
+     Zack:
+     </h4>
+     <h4 id="chermaines">
+     Chermaine:
+     </h4>
+     <br><br>
      <button onclick="showcard()">New task</button>
      <button onclick="showall()">
      Display all tasks
      </button>
+    
+     <button onclick="minuszack()" id="minuszbut">
+     -
+     </button>
+      <p id="zackscore">
+     0
+     </p>
+     <button onclick="pluszack()" id="pluszbut">
+     +
+     </button>
+     
+     <button onclick="minuschermaine()" id="minuscbut">
+     -
+     </button>
+     <p id="chermainescore">
+     0
+     </p>
+     <button onclick="pluschermaine()" id="pluscbut">
+     +
+     </button>
+     
     <p id="all">
      </p>
     
@@ -58,9 +87,11 @@
    
     ];
    
-    var cardsmod = cards.join("<br><br>");
+     var cardsmod = cards.join("<br><br>");
     var cardnumber = 0;
-    var showing = new Boolean();
+    var showing = new Boolean(false);
+    var zackpoints = 0;
+    var chermainepoints = 0;
     
   function showcard() {
   if (cards.length < 1) {
@@ -85,16 +116,65 @@
   }
       
   function showall() {
-    if (showing = false) {
-  document.getElementById("all").innerHTML = cardsmod;
-      showing = true;
-    } else {
-      document.getElementById("all").innerHTML = "-";
+    if (showing) {
+    document.getElementById("all").innerHTML = cardsmod;
       showing = false;
+    } else {
+       document.getElementById("all").innerHTML = "-";
+      showing = true;
     }
   }
+  
+  function minuszack() {
+  zackpoints-=1;
+  document.getElementById("zackscore").innerHTML = zackpoints;
+  }
+  function pluszack() {
+  zackpoints+=1;
+  document.getElementById("zackscore").innerHTML = zackpoints;
+  }
+  function minuschermaine() {
+  chermainepoints-=1;
+  document.getElementById("chermainescore").innerHTML = chermainepoints;
+  }
+  function pluschermaine() {
+  chermainepoints+=1;
+  document.getElementById("chermainescore").innerHTML = chermainepoints;
+  }
     </script>
-    
-    
+    <style>
+#secondheader {
+  display: inline;
+}
+#zacks {
+  display: inline;
+  color: blue;
+  margin-left: 100px;
+}
+#chermaines {
+  display: inline;
+  color: red;
+  margin-left: 50px;
+}
+#tasksdone {
+  display: inline;
+}
+#zackscore {
+  display: inline;
+  color: blue;
+  margin-left: 0px;
+}
+#chermainescore {
+  display: inline;
+  color: red;
+  margin-left: 0px;
+}
+#minuszbut {
+  margin-left: 100px;
+}
+#minuscbut {
+  margin-left: 50px;
+}
+    </style>
   </body>
 </html>
