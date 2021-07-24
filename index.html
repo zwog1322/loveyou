@@ -40,7 +40,7 @@
     "Ask each other medical questions until someone answers correctly<br>Content should be stuff the person should know",
     "Next task is worth double points",
     "One person chooses a number from 1-20, and the other tries to guess it. Change roles and repeat<br>Difference<7 = 1 point<br>Difference<3 = 2 points<br>Exact guess = 3 points",
-    "Play 2 rounds of hangman (taking turns) coming up with your own words with the theme 'food'",
+    "Play 2 rounds of hangman (taking turns) coming up with your own words with the theme 'what you like about each other'",
     "Compete on who can do wall-sits longer",
     "Open a random wikipedia page<br>Using only the links in each article, get to the article on Lee Hsien Loong with the least number of links in between",
     "Take turns to tickle each other. Fastest to make any noise with their mouth loses",
@@ -54,7 +54,8 @@
     "First person to smile loses",
     "Tell the other person a fact (you can lie)<br>The other person must guess if it's a truth or lie",
     "Make the loudest frog sound",
-        
+    "Winner is the one who can paylah the other person $5 faster",
+   
     ];
    
     var cardsmod = cards.join("<br><br>");
@@ -84,7 +85,11 @@
   
   
   function showall() {
+    if (document.getElementById("all").innerHTML = "") {
   document.getElementById("all").innerHTML = cardsmod;
+    } else {
+      document.getElementById("all").innerHTML = "";
+    }
   }
     </script>
     
