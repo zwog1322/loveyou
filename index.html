@@ -2,12 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday!</title>
+<title>My Web Page</title>
 </head>
   <body>
   <h1>
   I love you more than...
   </h1>
+  <h3 id="bonus">
+  </h3>
+  
   <h3>
   The task is:
   </h3>
@@ -25,11 +28,11 @@
      Chermaine:
      </h4>
      <br><br>
+     
      <button onclick="showcard()">New task</button>
      <button onclick="showall()">
      Display all tasks
      </button>
-    
      <button onclick="minuszack()" id="minuszbut">
      -
      </button>
@@ -49,8 +52,33 @@
      <button onclick="pluschermaine()" id="pluscbut">
      +
      </button>
+     <br>
+     <p id="all">
+     </p>
      
-    <p id="all">
+     <p id="m1">
+     Future point gain x2<br>Cost: 2 points (only can be bought once)
+     </p>
+     <p id="m2">
+     Future point gain x3<br>Cost: 4 points (only can be bought once)
+     </p>
+     <br>
+     <p id="m3">
+     Double point gain of next task for yourself<br>Cost: 3 points
+     </p>
+     <p id="m4">
+     Future point gain x2<br>Cost: 25 points
+     </p>
+     <br>
+     <p id="m5">
+     Choose the next task<br>Cost: 2 points (cost doubles everytime bought)<br>Unlocks after 15 tasks done
+     </p>
+     <p id="m6">
+     Play 3 rounds of poker betting points<br>Cost: 1 point (only can be bought once)<br>Unlocks after 15 tasks done
+     </p>
+     <br>
+     <p id="m7">
+     Halve the opponent's future point gain<br>Cost: 10 points (only can be bought once by <span id="loserspan">the person with less points</span>)<br>Unlocks after 20 tasks done
      </p>
     
     
@@ -87,16 +115,38 @@
    
     ];
    
-     var cardsmod = cards.join("<br><br>");
+    var cardsmod = cards.join("<br><br>");
     var cardnumber = 0;
     var showing = new Boolean(false);
     var zackpoints = 0;
     var chermainepoints = 0;
+    var loser = "zack"
     
   function showcard() {
   if (cards.length < 1) {
-  document.getElementById("demo").innerHTML = "No more tasks left!";
+  document.getElementById("demo").innerHTML = "Last task: hug each other and compare scores";
   return;
+  }
+  //bonus display
+  if (cardnumber>24) {
+  document.getElementById("bonus").innerHTML ="BONUS TIME<br>All tasks worth double points";
+  }
+  //update loser
+  if (zackpoints>chermainepoints) {
+  loser="chermaine";
+  } else if (chermainepoints>zackpoints) {
+  loser="zack";
+  } else {
+  loser="the person with less points";
+  }
+  //unlock background
+  if (cardnumber>13) {
+  document.getElementById("m5").style.background="white";
+  document.getElementById("m6").style.background="white";
+  }
+  if (cardnumber>18) {
+  document.getElementById("m7").style.background="white";
+  document.getElementById("loserspan").innerHTML = loser
   }
   //randomise and display
   var card = cards[Math.floor(Math.random()*cards.length)];
@@ -120,7 +170,7 @@
     document.getElementById("all").innerHTML = cardsmod;
       showing = false;
     } else {
-       document.getElementById("all").innerHTML = "-";
+       document.getElementById("all").innerHTML = "";
       showing = true;
     }
   }
@@ -142,10 +192,20 @@
   document.getElementById("chermainescore").innerHTML = chermainepoints;
   }
     </script>
+    
+    
     <style>
-#secondheader {
+#h1 {
   display: inline;
 }
+#bonus {
+  display: inline;
+  color: green;
+}
+
+#secondheader {
+     display: inline;
+     }
 #zacks {
   display: inline;
   color: blue;
@@ -174,6 +234,52 @@
 }
 #minuscbut {
   margin-left: 50px;
+}
+
+#m1 {
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+}
+#m2 {
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+}
+#m3 {
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+}
+#m4 {
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+}
+#m5 {
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  background: silver;
+}
+#m6 {
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  background: silver;
+}
+#m7 {
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  background: silver;
 }
     </style>
   </body>
