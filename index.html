@@ -33,25 +33,39 @@
      <button onclick="showall()">
      Display all tasks
      </button>
-     <button onclick="minuszack()" id="minuszbut">
+     
+     <button onclick="pluszack(-6)" id="minuszbut6">
+     -6
+     </button>
+     <button onclick="pluszack(-1)" id="minuszbut">
      -
      </button>
       <p id="zackscore">
      0
      </p>
-     <button onclick="pluszack()" id="pluszbut">
+     <button onclick="pluszack(1)" id="pluszbut">
      +
      </button>
+     <button onclick="pluszack(6)" id="pluszbut6">
+     +6
+     </button>
      
-     <button onclick="minuschermaine()" id="minuscbut">
+     <button onclick="pluschermaine(-6)" id="minuscbut6">
+     -6
+     </button>
+     <button onclick="pluschermaine(-1)" id="minuscbut">
      -
      </button>
      <p id="chermainescore">
      0
      </p>
-     <button onclick="pluschermaine()" id="pluscbut">
+     <button onclick="pluschermaine(1)" id="pluscbut">
      +
      </button>
+     <button onclick="pluschermaine(6)" id="pluscbut6">
+     +6
+     </button>
+     
      <br>
      <p id="all">
      </p>
@@ -78,7 +92,7 @@
      </p>
      <br>
      <p id="m7">
-     Halve the opponent's future point gain<br>Cost: 10 points (only can be bought once by <span id="loserspan">the person with less points</span>)<br>Unlocks after 20 tasks done
+     Halve the opponent's future point gain<br>Cost: 10 points (only can be bought once by <span id="loserspan">the person with less points</span>)<br>Unlocks after 20 tasks done<br>Only buyable if you have not bought the 25 point upgrade
      </p>
     
     
@@ -146,7 +160,7 @@
   }
   if (cardnumber>18) {
   document.getElementById("m7").style.background="white";
-  document.getElementById("loserspan").innerHTML = loser
+  document.getElementById("loserspan").innerHTML = loser;
   }
   //randomise and display
   var card = cards[Math.floor(Math.random()*cards.length)];
@@ -162,6 +176,13 @@
     //conditional tasks
     if (cardnumber==7) {
     cards.push("Play a round of poker, using your points to bet");
+    cardsmod= cardsmod+"<br><br>Play a round of poker, using your points to bet";
+    }
+    if (cardnumber==27) {
+    cards.push("test");
+    }
+    if (card=="test") {
+    document.getElementById("demo").innerHTML=loser+" gets 2 points<br>Affected by multipliers but not bonus time";
     }
   }
       
@@ -175,20 +196,12 @@
     }
   }
   
-  function minuszack() {
-  zackpoints-=1;
+  function pluszack(x) {
+  zackpoints+=x;
   document.getElementById("zackscore").innerHTML = zackpoints;
   }
-  function pluszack() {
-  zackpoints+=1;
-  document.getElementById("zackscore").innerHTML = zackpoints;
-  }
-  function minuschermaine() {
-  chermainepoints-=1;
-  document.getElementById("chermainescore").innerHTML = chermainepoints;
-  }
-  function pluschermaine() {
-  chermainepoints+=1;
+  function pluschermaine(x) {
+  chermainepoints+=x;
   document.getElementById("chermainescore").innerHTML = chermainepoints;
   }
     </script>
@@ -209,12 +222,12 @@
 #zacks {
   display: inline;
   color: blue;
-  margin-left: 100px;
+  margin-left: 140px;
 }
 #chermaines {
   display: inline;
   color: red;
-  margin-left: 50px;
+  margin-left: 120px;
 }
 #tasksdone {
   display: inline;
@@ -222,17 +235,17 @@
 #zackscore {
   display: inline;
   color: blue;
-  margin-left: 0px;
+  padding: 5px;
 }
 #chermainescore {
   display: inline;
   color: red;
-  margin-left: 0px;
+  padding: 5px;
 }
-#minuszbut {
+#minuszbut6 {
   margin-left: 100px;
 }
-#minuscbut {
+#minuscbut6 {
   margin-left: 50px;
 }
 
