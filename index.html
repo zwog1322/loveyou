@@ -8,7 +8,8 @@
   <h1>
   I love you more than...
   </h1>
-  <img id ="image" src="//:0">
+  <div id="image" class='bounding-box'>
+  </div>
   
   <h3 id="bonus">
   </h3>
@@ -163,9 +164,9 @@
   //randomise image
   var currentimage = imagearray[Math.floor(Math.random()*imagearray.length)];
   if (Math.random()<0.2) {
-  document.getElementById("image").src= currentimage;
+  document.getElementById("image").style.backgroundImage = "url(currentimage)";
   } else {
-  document.getElementById("image").src="//:0";
+  document.getElementById("image").style.backgroundImage =none;
   }
   //bonus display
   if (cardnumber>24) {
@@ -243,8 +244,10 @@
 }
 #image {
   display: inline;
-  max-height: 200px;
+  height: 200px;
   width: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 #bonus {
   color: green;
