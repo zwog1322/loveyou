@@ -166,6 +166,11 @@
   document.getElementById("image").src= currentimage;
   document.getElementById("image").style.height = "200px";
   document.getElementById("image").style.width = "auto";
+    
+    var imgindex = imagearray.indexOf(currentimage);
+    if (imgindex > -1) {
+    imagearray.splice(imgindex,1);
+    }
   } else {
   document.getElementById("image").src="https://www.macmillandictionary.com/external/slideshow/full/White_full.png";
   document.getElementById("image").style.height = "1px";
@@ -246,7 +251,7 @@
   display: inline;
 }
 #image {
-  display: inline-block;
+  display: inline;
 }
 #bonus {
   color: green;
