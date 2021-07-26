@@ -164,7 +164,8 @@
   //randomise image
   var currentimage = imagearray[Math.floor(Math.random()*imagearray.length)];
   if (Math.random()<0.2) {
-  document.getElementById("image").style.backgroundImage = currentimage;
+    var theurl = (new URL(currentimage));
+  document.getElementById("image").style.backgroundImage = theurl;
   } else {
   document.getElementById("image").style.backgroundImage =none;
   }
