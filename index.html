@@ -8,6 +8,8 @@
   <h1>
   I love you more than...
   </h1>
+  <img id ="image" src="//:0">
+  
   <h3 id="bonus">
   </h3>
   
@@ -15,6 +17,7 @@
   The task is:
   </h3>
     <p id="demo"></p>
+    
      <h3 id="secondheader">
      Number of tasks done:
      </h3>
@@ -64,6 +67,11 @@
      </button>
      <button onclick="pluschermaine(6)" id="pluscbut6">
      +6
+     </button>
+     
+     <br>
+     <button onclick="redirect()">
+     How to play
      </button>
      
      <br>
@@ -129,6 +137,17 @@
    
     ];
    
+   var imagearray = [
+   "cher1.jpeg",
+   "cher2.jpeg",
+   "cher3.jpeg",
+   "cher4.jpeg",
+   "cher5.jpeg",
+   "cher6.jpeg",
+   "cher7.jpeg",
+   "cher8.jpeg",
+   ];
+   
     var cardsmod = cards.join("<br><br>");
     var cardnumber = 0;
     var showing = new Boolean(false);
@@ -140,6 +159,13 @@
   if (cards.length < 1) {
   document.getElementById("demo").innerHTML = "Last task: hug each other and compare scores";
   return;
+  }
+  //randomise image
+  var currentimage = imagearray[Math.floor(Math.random()*imagearray.length)];
+  if (Math.random()<0.2) {
+  document.getElementById("image").src= currentimage;
+  } else {
+  document.getElementById("image").src="//:0";
   }
   //bonus display
   if (cardnumber>24) {
@@ -204,6 +230,10 @@
   chermainepoints+=x;
   document.getElementById("chermainescore").innerHTML = chermainepoints;
   }
+  
+  function redirect() {
+  window.open("https://iloveyoumorethanyou.weebly.com/")
+  }
     </script>
     
     
@@ -211,8 +241,10 @@
 #h1 {
   display: inline;
 }
-#bonus {
+#image {
   display: inline;
+}
+#bonus {
   color: green;
 }
 
