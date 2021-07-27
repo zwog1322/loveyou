@@ -134,6 +134,9 @@
     "Tell the other person a fact (you can lie)<br>The other person must guess if it's a truth or lie",
     "Make the loudest frog sound",
     "Winner is the one who can paylah the other person $5 faster",
+    "Play scissors paper stone with only paper and stone<br>If someone wins: they get 2 points<br>If both use paper: -1 points from everyone<br>If both use stone: +1 points to everyone",
+    "dist",
+    
    
     ];
    
@@ -159,6 +162,10 @@
     var zackpoints = 0;
     var chermainepoints = 0;
     var loser = "zack"
+    var randomperson = [
+    "zack",
+    "chermaine"
+    ];
     
   function showcard() {
   if (cards.length < 1) {
@@ -224,6 +231,9 @@
     if (card=="test") {
     document.getElementById("demo").innerHTML=loser+" gets 2 points<br>Affected by multipliers but not bonus time";
     }
+    if (card=="dist") {
+    var randomperson2 = randomperson[Math.floor(Math.random()*randomperson.length)];
+    document.getElementById("demo").innerHTML=randomperson2+" gets 3 points. They decide how many points to give the other person<br>If the other person rejects, no one gets any points";
   }
       
   function showall() {
