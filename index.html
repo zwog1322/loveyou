@@ -89,7 +89,7 @@
      Double point gain of next task for yourself<br>Cost: 3 points (cost doubles everytime bought)
      </p>
      <p id="m4">
-     Future point gain x2<br>Cost: 50 points
+     Future point gain x2<br>Cost: 48 points (can be bought 3 times)
      </p>
      <br>
      <p id="m5">
@@ -100,7 +100,7 @@
      </p>
      <br>
      <p id="m7">
-     Halve the opponent's future point gain<br>Cost: 6 points (only can be bought once by <span id="loserspan">the person with less points</span>)<br>Unlocks after 20 tasks done<br>Only buyable if you have not bought the 50 point upgrade
+     Halve the opponent's future point gain<br>Cost: 6 points (only can be bought once by <span id="loserspan">the person with less points</span>)<br>Unlocks after 20 tasks done<br>Only buyable if you have not bought the 48 point upgrade
      </p>
     
     
@@ -134,7 +134,7 @@
     "Tell the other person a fact (you can lie)<br>The other person must guess if it's a truth or lie",
     "Make the loudest frog sound",
     "Winner is the one who can paylah the other person $5 faster",
-    "Play scissors paper stone with only paper and stone<br>If someone wins: they get 2 points<br>If both use paper: -1 points from everyone<br>If both use stone: +1 points to everyone",
+    "Play scissors paper stone with only paper and stone<br>If someone wins: they get 1 point<br>If both use paper: -1 points from everyone<br>If both use stone: +1 points to everyone",
     "---",
     "COOPERATE:<br>Type together on the same phone 'Chermaine is so cute I wanna eat her up'",
    
@@ -169,7 +169,7 @@
     
   function showcard() {
   if (cards.length < 1) {
-  document.getElementById("demo").innerHTML = "Hug each other and compare scores<br>Hidden goal: add up your scores to find out the total amount of love in your relationship!<br>Above x points: S rank husband and wife<br>Between x and x points: A rank fiance and fiancee<br>Between x and x points: B rank boyfriend and girlfriend<br>Lower than x points: Chermaine was being mean wasn't she<br>Moral of the game: Don't focus too much on who loves the other more, and instead appreciate the total amount of love in the relationship";
+  document.getElementById("demo").innerHTML = "Hug each other and compare scores<br>Hidden goal: add up your scores to find out the total amount of love in your relationship!<br>Above 400 points: S rank husband and wife<br>Between 400 and 200 points: A rank fiance and fiancee<br>Between 200 and 100 points: B rank boyfriend and girlfriend<br>Lower than 100 points: Both of you were too competitive! Or made poor choices<br>Moral of the game: Don't focus too much on who loves the other more, and instead appreciate the total amount of love in the relationship";
   return;
   }
   if (document.getElementById("demo").innerHTML=="chermaine: you can now choose to +3 or -3 points from zack. What do you do?") {
@@ -234,7 +234,7 @@
     if (cardnumber==10) {
     cards.push("chermaine: you can now choose to +3 or -3 points from zack. What do you do?");
     }
-    if (cardnumber==27) {
+    if (cardnumber==30) {
     cards.push("test");
     }
     if (card=="test") {
