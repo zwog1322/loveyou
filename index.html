@@ -169,7 +169,7 @@
     
   function showcard() {
   if (cards.length < 1) {
-  document.getElementById("demo").innerHTML = "Last task: hug each other and compare scores";
+  document.getElementById("demo").innerHTML = "Hug each other and compare scores<br>Hidden goal: add up your scores to find out the total amount of love in your relationship!<br>Above x points: S rank husband and wife<br>Between x and x points: A rank fiance and fiancee<br>Between x and x points: B rank boyfriend and girlfriend<br>Lower than x points: Chermaine was being mean wasn't she<br>Moral of the game: Don't focus too much on who loves the other more, and instead appreciate the total amount of love in the relationship";
   return;
   }
   if (document.getElementById("demo").innerHTML=="chermaine: you can now choose to +3 or -3 points from zack. What do you do?") {
@@ -195,7 +195,7 @@
   document.getElementById("image").style.width = "1px";
   }
   //bonus display
-  if (cardnumber>24) {
+  if (cardnumber>29) {
   document.getElementById("bonus").innerHTML ="BONUS TIME<br>All tasks worth double points";
   }
   //update loser
